@@ -1,6 +1,3 @@
-# backend/logic.py
-
-# Simulasi database menggunakan list (In-Memory Data)
 mock_database = []
 
 def proses_pesanan_baru(nama, menu, jumlah):
