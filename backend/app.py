@@ -1,38 +1,69 @@
-from flask import Flask, request, jsonify
-import logic  # Mengimpor logika bisnis yang sudah dipisah
+# backend/app.py
+from flask import Flask, render_template, request, redirect, url_for
+import logic
 
-app = Flask(__name__)
+# Mengarahkan Flask ke folder frontend yang berada di luar direktori backend
+app = Flask(__name__, 
+            template_folder='../frontend', 
+            static_folder='../frontend', 
+            static_url_path='')
 
-# Endpoint 1: Menerima pesanan (Digunakan oleh form Reservasi)
-@app.route('/api/pesan', methods=['POST'])
-def terima_pesanan():
-    # Menangkap data form (Bisa dari request.form atau request.json)
+# Pastikan struktur tabel database siap saat aplikasi dinyalakan
+try:
+    logic.init_db()
+except Exception as e:
+    print(f"Peringatan: Gagal sinkronisasi database. Periksa MySQL Anda. Error: {e}")
+
+# ========================================================
+# ROUTING HALAMAN (RENDERING FRONTEND)
+# ========================================================
+
+@app.route('/')
+@app.route('/index.html')
+def index():
+    return render_template('pages/index.html')
+
+@app.route('/login.html')
+def login():
+    return render_template('pages/login.html')
+
+@app.route('/menu.html')
+def menu():
+    return render_template('pages/menu.html')
+
+@app.route('/reservasi.html')
+@app.route('/reservasi')
+def reservasi():
+    return render_template('pages/reservasi.html')
+
+@app.route('/dashboard.html')
+@app.route('/dashboard')
+def dashboard():
+    # Mengambil data asli dari MySQL melalui logic.py
+    daftar_pesanan = logic.ambil_semua_reservasi()
+    total_pesanan = len(daftar_pesanan)
+    
+    # Mengirimkan data dinamis ke Dashboard.html
+    return render_template('pages/dashboard.html', 
+                           pesanan_list=daftar_pesanan, 
+                           total_pesanan=total_pesanan)
+
+# ========================================================
+# ROUTING AKSI (LOGIKA PROSES FORM)
+# ========================================================
+
+@app.route('/proses_pesan', methods=['POST'])
+def proses_pesan():
     nama = request.form.get('nama_pelanggan')
     menu = request.form.get('pilihan_menu')
     jumlah = request.form.get('jumlah')
-
-    # Mengoper data ke logic.py untuk diproses
-    hasil = logic.proses_pesanan_baru(nama, menu, jumlah)
-
-    # Mengembalikan respons HTTP (JSON)
-    if hasil['sukses']:
-        return jsonify(hasil), 201  # 201 Created
-    else:
-        return jsonify(hasil), 400  # 400 Bad Request
-
-# Endpoint 2: Mengirim data ke Dashboard (Digunakan oleh admin/user)
-@app.route('/api/dashboard', methods=['GET'])
-def kirim_data_dashboard():
-    # Mengambil data dari logic.py
-    data_pesanan = logic.ambil_semua_pesanan()
     
-    respons = {
-        "total_pesanan_hari_ini": len(data_pesanan),
-        "daftar_pesanan": data_pesanan
-    }
+    # Eksekusi fungsi di logic.py
+    sukses = logic.tambah_reservasi(nama, menu, jumlah)
     
-    return jsonify(respons), 200  # 200 OK
+    if sukses:
+        return redirect(url_for('dashboard'))
+    return "Gagal memproses reservasi", 400
 
 if __name__ == '__main__':
-    # Berjalan di port 5000
-    app.run(debug=True, port=5000)
+    app.run(debug=True)
