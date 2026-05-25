@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * reservasi.js - Skrip Halaman Reservasi
  * Menangani validasi formulir pemesanan tempat duduk/meja.
@@ -37,3 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+=======
+function cekForm() {
+    let nama = document.getElementById("nama").value;
+    if (nama.length < 3) {
+        alert("Nama tidak boleh terlalu pendek!");
+        return false;
+    }
+    return true;
+}
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
