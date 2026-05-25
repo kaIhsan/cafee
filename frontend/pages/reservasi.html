@@ -1,4 +1,55 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Formulir Reservasi Meja</title>
+<link rel="stylesheet" href="/css/reservasi.css">
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="form-box" style="max-width: 500px; margin: 30px auto; background:
+white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<h2 style="margin-top: 0;">Formulir Pemesanan Kursi & Menu</h2>
+<p style="color: #64748b; font-size: 13px;">Isi data dengan benar untuk
+pemesanan otomatis sistem ke database.</p>
+<form action="/proses_pesan" method="POST" onsubmit="return
+validasiInputPelanggan()">
+<div style="margin-bottom: 15px;">
+<label style="display: block; font-weight: bold; margin-bottom:
+5px;">Nama Lengkap Pelanggan:</label>
+<input type="text" id="nama" name="nama_pelanggan" style="width: 100%;
+padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px;" required>
+</div>
+<div style="margin-bottom: 15px;">
+<label style="display: block; font-weight: bold; margin-bottom:
+5px;">Pilihan Menu Utama:</label>
+<select name="pilihan_menu" style="width: 100%; padding: 10px; border:
+1px solid #cbd5e1; border-radius: 4px;">
+<option value="Kopi Susu Gula Aren">Kopi Susu Gula Aren</option>
+<option value="Americano Iced">Americano Iced</option>
+<option value="Matcha Latte Creamy">Matcha Latte Creamy</option>
+<option value="Roti Bakar Cokelat Keju">Roti Bakar Cokelat Keju</
+option>
+<option value="Kentang Goreng Garing">Kentang Goreng Garing</
+option>
+<option value="Nasi Goreng Khas Kafe">Nasi Goreng Khas Kafe</
+option>
+</select>
+</div>
+<div style="margin-bottom: 20px;">
+<label style="display: block; font-weight: bold; margin-bottom:
+5px;">Jumlah Porsi / Pesanan:</label>
+<input type="number" name="jumlah" min="1" max="20" style="width: 100%;
+padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px;" required>
+</div>
+<button type="submit" style="width: 100%; background-color: #0ea5e9; color:
+white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor:
+pointer;">Kirim Data Reservasi</button></form>
+</div>
+<script src="/js/reservasi.js"></script>
+{% include 'footer.html' %}
+=======
 <html>
 <head>
     <title>Reservasi</title>
@@ -23,5 +74,6 @@
     </form>
     
     <script src="/js/reservasi.js"></script>
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
 </body>
 </html>

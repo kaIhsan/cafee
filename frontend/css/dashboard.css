@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+body {
+font-family: Arial, sans-serif;
+background-color: #f8fafc;
+color: #334155;
+margin: 0;
+padding: 0;
+}
+.container, .form-box, .login-box, .dashboard-container {
+animation: munculPerlahan 0.5s ease-out;
+}
+@keyframes munculPerlahan {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -195,4 +210,5 @@ td {
 .status.process {
     background-color: #FFF3E0;
     color: #EF6C00;
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
 }
