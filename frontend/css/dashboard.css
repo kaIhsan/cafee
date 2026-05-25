@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 font-family: Arial, sans-serif;
 background-color: #f8fafc;
@@ -11,4 +12,203 @@ animation: munculPerlahan 0.5s ease-out;
 @keyframes munculPerlahan {
 from { opacity: 0; transform: translateY(10px); }
 to { opacity: 1; transform: translateY(0); }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #00704A;
+    --sidebar-bg: #1E3932; /* Warna hijau sangat pekat untuk sidebar */
+    --bg-light: #F9F9F9;
+    --white: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    padding: 30px 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #D4E9E2; /* Warna aksen mint muda */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    flex: 1;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 25px;
+    color: #B5C6C0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li a:hover, 
+.sidebar-menu li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-left: 5px solid var(--primary-color);
+}
+
+.logout-btn {
+    padding: 20px;
+    text-align: center;
+}
+
+.logout-btn a {
+    display: block;
+    padding: 12px;
+    background-color: #C23B22; /* Warna merah elegan untuk logout */
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.header-top h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-section img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* --- CARDS --- */
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-top: 4px solid var(--primary-color);
+}
+
+.card h3 {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.card .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 10px;
+}
+
+/* --- TABLE --- */
+.recent-orders {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.recent-orders h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+td {
+    font-size: 15px;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.success {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.status.process {
+    background-color: #FFF3E0;
+    color: #EF6C00;
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
 }

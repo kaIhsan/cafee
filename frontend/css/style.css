@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
 font-family: Arial, sans-serif;
 background-color: #f8fafc;
 color: #334155;
@@ -11,4 +12,17 @@ animation: munculPerlahan 0.5s ease-out;
 @keyframes munculPerlahan {
 from { opacity: 0; transform: translateY(10px); }
 to { opacity: 1; transform: translateY(0); }
+=======
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
 }

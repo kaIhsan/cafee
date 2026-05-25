@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -48,5 +49,31 @@ pointer;">Kirim Data Reservasi</button></form>
 </div>
 <script src="/js/reservasi.js"></script>
 {% include 'footer.html' %}
+=======
+<html>
+<head>
+    <title>Reservasi</title>
+    <link rel="stylesheet" href="/css/reservasi.css">
+</head>
+<body>
+    <h2>Form Reservasi</h2>
+    <form action="/proses_pesan" method="POST" onsubmit="return cekForm()">
+        <label>Nama:</label>
+        <input type="text" id="nama" name="nama_pelanggan" required>
+
+        <label>Menu:</label>
+        <select name="pilihan_menu">
+            <option value="Kopi Susu">Kopi Susu</option>
+            <option value="Roti Bakar">Roti Bakar</option>
+        </select>
+
+        <label>Jumlah:</label>
+        <input type="number" name="jumlah" required>
+
+        <button type="submit">Pesan</button>
+    </form>
+    
+    <script src="/js/reservasi.js"></script>
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
 </body>
 </html>
