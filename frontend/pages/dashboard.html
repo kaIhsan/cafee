@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Premium Cafe</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                Premium Cafe.
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="active">Ringkasan</a></li>
+                <li><a href="menu.html">Katalog Menu</a></li>
+                <li><a href="reservasi.html">Reservasi Saya</a></li>
+                <li><a href="#">Poin & Rewards</a></li>
+            </ul>
+            <div class="logout-btn">
+                <a href="login.html">Keluar Akun</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="header-top">
+                <h1>Selamat Datang Kembali, Penikmat Kopi!</h1>
+                <div class="profile-section">
+                    <span style="font-weight: 500;">Budi Santoso</span>
+                    <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=00704A&color=fff" alt="Profile">
+                </div>
+            </header>
+
+            <section class="overview-cards">
+                <div class="card">
+                    <h3>Total Pesanan Bulan Ini</h3>
+                    <div class="value">12</div>
+                </div>
+                <div class="card">
+                    <h3>Poin Rewards Anda</h3>
+                    <div class="value">450 Pts</div>
+                </div>
+                <div class="card">
+                    <h3>Voucher Aktif</h3>
+                    <div class="value">2</div>
+                </div>
+            </section>
+
+            <section class="recent-orders">
+                <h2>Riwayat Pesanan Terbaru</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Pesanan</th>
+                            <th>Item (Menu)</th>
+                            <th>Tanggal</th>
+                            <th>Total Harga</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-8821</td>
+                            <td>Caramel Macchiato, Butter Croissant</td>
+                            <td>25 Mei 2026</td>
+                            <td>Rp 85.000</td>
+                            <td><span class="status process">Diproses</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8790</td>
+                            <td>Iced Matcha Latte</td>
+                            <td>22 Mei 2026</td>
+                            <td>Rp 45.000</td>
+                            <td><span class="status success">Selesai</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8755</td>
+                            <td>Americano (Hot)</td>
+                            <td>20 Mei 2026</td>
+                            <td>Rp 30.000</td>
+                            <td><span class="status success">Selesai</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
