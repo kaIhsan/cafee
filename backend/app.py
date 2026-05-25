@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from logic import (
@@ -226,3 +227,5 @@ if __name__ == '__main__':
     # Berjalan di port 5000
 >>>>>>> b2f13c8236396592e4a73a72a87335505ad27296
     app.run(debug=True, port=5000)
+=======
+>>>>>>> 8b25df1a6dc8142a68ef4f276ffde9c218277829
