@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservasi</title>
+    <link rel="stylesheet" href="/css/reservasi.css">
+</head>
+<body>
+    <h2>Form Reservasi</h2>
+    <form action="/proses_pesan" method="POST" onsubmit="return cekForm()">
+        <label>Nama:</label>
+        <input type="text" id="nama" name="nama_pelanggan" required>
+
+        <label>Menu:</label>
+        <select name="pilihan_menu">
+            <option value="Kopi Susu">Kopi Susu</option>
+            <option value="Roti Bakar">Roti Bakar</option>
+        </select>
+
+        <label>Jumlah:</label>
+        <input type="number" name="jumlah" required>
+
+        <button type="submit">Pesan</button>
+    </form>
+    
+    <script src="/js/reservasi.js"></script>
+</body>
+</html>
