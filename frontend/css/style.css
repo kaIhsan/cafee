@@ -1,28 +1,84 @@
-body {
-<<<<<<< HEAD
-font-family: Arial, sans-serif;
-background-color: #f8fafc;
-color: #334155;
-margin: 0;
-padding: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
-.container, .form-box, .login-box, .dashboard-container {
-animation: munculPerlahan 0.5s ease-out;
+
+body{
+  background:#f5f5f5;
 }
-@keyframes munculPerlahan {
-from { opacity: 0; transform: translateY(10px); }
-to { opacity: 1; transform: translateY(0); }
-=======
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
+
+header{
+  background:#2c1810;
+  padding:20px;
 }
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
->>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav h1{
+  color:white;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.hero{
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.overlay{
+  background:rgba(0,0,0,0.5);
+  padding:40px;
+  color:white;
+  text-align:center;
+  border-radius:10px;
+}
+
+.overlay h2{
+  font-size:50px;
+}
+
+.overlay p{
+  margin:20px 0;
+}
+
+.btn{
+  background:#c97b36;
+  padding:12px 24px;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+.features{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:60px 20px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  width:300px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
