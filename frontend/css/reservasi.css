@@ -1,14 +1,88 @@
+/* Reset dasar untuk memastikan tampilan konsisten */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-font-family: Arial, sans-serif;
-background-color: #f8fafc;
-color: #334155;
-margin: 0;
-padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+    padding: 20px;
 }
-.container, .form-box, .login-box, .dashboard-container {
-animation: munculPerlahan 0.5s ease-out;
+
+/* Kontainer utama form */
+.form-box {
+    max-width: 500px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
-@keyframes munculPerlahan {
-from { opacity: 0; transform: translateY(10px); }
-to { opacity: 1; transform: translateY(0); }
+
+h2 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #334155;
+}
+
+/* Input dan Select */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    background-color: #0ea5e9;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0284c7;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 15px;
+    }
 }
