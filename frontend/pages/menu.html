@@ -1,91 +1,73 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Daftar Kuliner Terbaik Kami</title>
-<link rel="stylesheet" href="/css/menu.css">
-</head>
-<body>
-{% include 'navbar.html' %}
-<div class="container" style="padding: 20px; max-width: 700px; margin: auto;">
-<h1 style="text-align: center; color: #1e293b;">Daftar Menu Spesial Kafe</h1>
-<div class="card-menu" style="background: white; padding: 20px; border-radius:
-8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px;">
-<h3 style="color: #0ea5e9; border-bottom: 2px solid #f1f5f9; padding-
-bottom: 5px;">Kopi & Minuman Segar</h3>
-<ul style="list-style-type: none; padding-left: 0;">
-<li style="padding: 8px 0; border-bottom: 1px dashed
-#e2e8f0;"><strong>Kopi Susu Gula Aren</strong> - Rp 20.000</li>
-<li style="padding: 8px 0; border-bottom: 1px dashed
-#e2e8f0;"><strong>Americano Iced</strong> - Rp 18.000</li>
-<li style="padding: 8px 0;"><strong>Matcha Latte Creamy</strong> - Rp
-25.000</li>
-</ul>
-</div>
-<div class="card-menu" style="background: white; padding: 20px; border-radius:
-8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-<h3 style="color: #0ea5e9; border-bottom: 2px solid #f1f5f9; padding-
-bottom: 5px;">Makanan & Camilan</h3>
-<ul style="list-style-type: none; padding-left: 0;">
-<li style="padding: 8px 0; border-bottom: 1px dashed
-#e2e8f0;"><strong>Roti Bakar Cokelat Keju</strong> - Rp 15.000</li>
-<li style="padding: 8px 0; border-bottom: 1px dashed
-#e2e8f0;"><strong>Kentang Goreng Garing</strong> - Rp 20.000</li>
-<li style="padding: 8px 0;"><strong>Nasi Goreng Khas Kafe</strong> - Rp
-30.000</li>
-</ul>
-</div>
-<div style="text-align: center; margin-top: 30px;">
-<a href="/reservasi">
-<button style="background-color: #28a745; color: white; padding: 12px
-25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Langsung
-Pesan Sekarang</button>
-</a>
-</div>
-</div>
-{% include 'footer.html' %}
-=======
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Daftar Menu Kafe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Menu - Kafe Galaksi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/menu.css">
 </head>
-<body>
-    {% include '../components/navbar.html' %}
+<body class="galaxy-body">
+    {% include 'navbar.html' %}
 
-    <div style="padding: 20px; max-width: 800px; margin: auto;">
-        <h1 style="text-align: center;">Daftar Menu Spesial Kami</h1>
-        <p style="text-align: center;">Pilih makanan dan minuman favoritmu sebelum melakukan reservasi.</p>
+    <main class="menu-container">
+        <header class="menu-header">
+            <h1 class="glow-text">Daftar Menu Spesial</h1>
+            <p>Jelajahi rasa dari galaksi lain. Pilih makanan dan minuman favoritmu sebelum melakukan perjalanan.</p>
+        </header>
 
-        <div style="background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2>Kopi & Minuman</h2>
-            <ul>
-                <li><strong>Kopi Susu Gula Aren</strong> - Rp 20.000</li>
-                <li><strong>Americano Dingin</strong> - Rp 18.000</li>
-                <li><strong>Matcha Latte</strong> - Rp 25.000</li>
-                <li><strong>Es Teh Leci</strong> - Rp 15.000</li>
-            </ul>
+        <div class="menu-wrapper">
+            <section class="menu-card">
+                <h2>Kopi & Minuman Segar</h2>
+                <ul class="menu-list">
+                    <li>
+                        <span class="item-name">Kopi Susu Gula Aren</span>
+                        <span class="item-price">Rp 20.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Americano Dingin</span>
+                        <span class="item-price">Rp 18.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Matcha Latte Creamy</span>
+                        <span class="item-price">Rp 25.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Nebula Lychee Tea</span>
+                        <span class="item-price">Rp 15.000</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="menu-card">
+                <h2>Makanan & Camilan</h2>
+                <ul class="menu-list">
+                    <li>
+                        <span class="item-name">Roti Bakar Cokelat Keju</span>
+                        <span class="item-price">Rp 15.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Meteor Fries (Sosis & Kentang)</span>
+                        <span class="item-price">Rp 20.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Nasi Goreng Bimasakti</span>
+                        <span class="item-price">Rp 30.000</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Spaghetti Bolognese</span>
+                        <span class="item-price">Rp 35.000</span>
+                    </li>
+                </ul>
+            </section>
         </div>
 
-        <div style="background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2>Makanan & Camilan</h2>
-            <ul>
-                <li><strong>Roti Bakar Coklat Keju</strong> - Rp 15.000</li>
-                <li><strong>Kentang Goreng Sosis</strong> - Rp 20.000</li>
-                <li><strong>Nasi Goreng Kafe</strong> - Rp 30.000</li>
-                <li><strong>Spaghetti Bolognese</strong> - Rp 35.000</li>
-            </ul>
+        <div class="menu-action">
+            <p>Sudah menentukan koordinat pesanan?</p>
+            <a href="/reservasi" class="btn-cosmic">Buat Reservasi Sekarang</a>
         </div>
+    </main>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <p>Sudah tentukan pilihan?</p>
-            <a href="/reservasi"><button style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Buat Reservasi Sekarang</button></a>
-        </div>
-    </div>
+    {% include 'footer.html' %}
 </body>
 </html>
->>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
