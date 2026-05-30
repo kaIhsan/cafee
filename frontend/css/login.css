@@ -1,23 +1,15 @@
-/* ==========================================================================
-   Premium Cafe - Global Stylesheet (style.css)
-   Konsep: Minimalis Modern, Elegan, dan Interaktif (Tidak Membosankan)
-   ========================================================================== */
-
-/* Import Google Font untuk tipografi yang clean dan estetik */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Color Palette - Slate & Sky Blue (Premium, Tenang, & Profesional) */
-    --color-primary: #0ea5e9;
+    --color-primary: #c924ad;
     --color-primary-hover: #0284c7;
-    --color-dark: #1e293b;
-    --color-dark-hover: #0f172a;
+    --color-dark: #2a569b;
+    --color-dark-hover: #244eb0;
     --color-slate-600: #475569;
     --color-slate-400: #94a3b8;
-    --color-bg-main: #f8fafc;
-    --color-bg-card: #ffffff;
+    --color-bg-main: #dee6ef;
+    --color-bg-card: #d5becf93;
     
-    /* Typography */
     --font-main: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* Animation & Transitions */
@@ -29,9 +21,6 @@
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-/* ==========================================================================
-   Reset Base Styles
-   ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -46,7 +35,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Helper Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -54,9 +42,6 @@ body {
     padding: 0 20px;
 }
 
-/* ==========================================================================
-   Halaman Utama (Landing Page / Hero Section)
-   ========================================================================== */
 .hero-section {
     max-width: 800px;
     margin: 80px auto;
@@ -95,9 +80,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* ==========================================================================
-   Komponen Tombol (Button Styling)
-   ========================================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -111,10 +93,9 @@ body {
     transition: var(--transition-smooth);
 }
 
-/* Tombol Gelap (Varian Menu) */
 .btn-dark {
     background-color: var(--color-dark);
-    color: #ffffff;
+    color: #f1edf1;
 }
 
 .btn-dark:hover {
