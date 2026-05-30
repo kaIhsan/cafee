@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --color-primary: #c924ad;
-    --color-primary-hover: #0284c7;
-    --color-dark: #2a569b;
-    --color-dark-hover: #244eb0;
-    --color-slate-600: #475569;
-    --color-slate-400: #94a3b8;
-    --color-bg-main: #dee6ef;
-    --color-bg-card: #d5becf93;
+    --color-primary: #0911ab;
+    --color-primary-hover: #0911ab;
+    --color-dark: #0909ab;
+    --color-dark-hover: #ffffff;
+    --color-slate-600: #6300ae98;
+    --color-slate-400: #79797998;
+    --color-bg-main: #6300ae98;
+    --color-bg-card: #ffffff93;
     
     --font-main: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
@@ -25,6 +25,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.login-body {
+    background-image: url('../assets/galaxytheme.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 body {
