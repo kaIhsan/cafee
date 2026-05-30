@@ -94,7 +94,7 @@ button{
     padding:12px;
     border:none;
     border-radius:8px;
-    background:rgb(198, 41, 107);
+    background:Linear-gradient(135deg, #8B5CF6, #EC4899);
     color:black;
     font-weight:bold;
     cursor:pointer;
@@ -115,7 +115,7 @@ button{
 }
 
 .back-button:hover{
-    background: rgb(196, 29, 90);
+    background: Linear-gradient(135deg, #8B5CF6, #EC4899);
     color: black;
     border-color: rgb(0, 42, 255);
 }

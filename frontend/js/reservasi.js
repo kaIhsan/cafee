@@ -35,3 +35,13 @@ function hitungTotal() {
     document.getElementById('totalHarga').innerText =
         "Rp " + total.toLocaleString('id-ID');
 }
+
+document.getElementById("formReservasi").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    alert("Reservasi berhasil dibuat!");
+
+    setTimeout(() => {
+        window.location.href = "dashboard.html";
+    }, 1000);
+});
