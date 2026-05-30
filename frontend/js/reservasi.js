@@ -45,3 +45,21 @@ document.getElementById("formReservasi").addEventListener("submit", function(e){
         window.location.href = "dashboard.html";
     }, 1000);
 });
+
+function validasiInputPelanggan() {
+  const nama = document.getElementById('nama').value.trim();
+  const menu = document.querySelector('[name="pilihan_menu"]').value;
+  const jumlah = parseInt(document.querySelector('[name="jumlah"]').value);
+
+  if (!nama || !jumlah) return false;
+
+  const PRICES = { 'Kopi Susu Gula Aren': 20000, 'Americano Iced': 18000, ... };
+  const id = '#ORD-' + (Date.now() % 100000);
+  const total = (PRICES[menu] || 0) * jumlah;
+
+  const orders = JSON.parse(localStorage.getItem('galaxy_orders') || '[]');
+  orders.unshift({ id, nama, menu, jumlah, total,
+    tanggal: new Date().toLocaleDateString('id-ID'), status: 'new', label: 'Baru' });
+  localStorage.setItem('galaxy_orders', JSON.stringify(orders));
+  return true; // lanjut submit
+}
