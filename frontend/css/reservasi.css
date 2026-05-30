@@ -50,13 +50,17 @@ body{
     z-index:1;
 }
 
-/* Form */
 .container{
     position:relative;
     z-index:2;
     width:100%;
     max-width:500px;
     padding:20px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
 .reservasi-box{
@@ -89,16 +93,21 @@ body{
     border-radius:8px;
 }
 
-button{
+button:not(.qty-box button){
     width:100%;
     padding:12px;
     border:none;
     border-radius:8px;
-    background:Linear-gradient(135deg, #8B5CF6, #EC4899);
+    background:linear-gradient(135deg, #8B5CF6, #EC4899);
     color:black;
     font-weight:bold;
     cursor:pointer;
 }
+
+button:not(.qty-box button):hover{
+    background:#e028a3;
+}
+
 .back-button{
     position: fixed;
     top: 20px;
@@ -115,13 +124,9 @@ button{
 }
 
 .back-button:hover{
-    background: Linear-gradient(135deg, #8B5CF6, #EC4899);
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
     color: black;
     border-color: rgb(0, 42, 255);
-}
-
-button:hover{
-    background:#e028a3;
 }
 
 .kategori-title{
@@ -141,6 +146,7 @@ button:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:10px;
     background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.1);
     border-radius:12px;
@@ -156,31 +162,53 @@ button:hover{
 .menu-item span{
     color:gold;
 }
+
 .qty-box{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:6px;
 }
 
 .qty-box button{
-    width:35px;
-    height:35px;
+    width:24px;
+    height:24px;
+    min-width:24px;
+    min-height:24px;
+
+    padding:0;
+    margin:0;
+
     border:none;
     border-radius:50%;
-    background:rgb(216, 19, 160);
+
+    background:#EC4899;
     color:black;
-    font-size:18px;
+
+    font-size:14px;
+    font-weight:bold;
+
     cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
 }
 
+/* INPUT QTY */
 .qty-box input{
-    width:50px;
+    width:40px;
+    height:26px;
     text-align:center;
     border:none;
-    border-radius:5px;
-    padding:5px;
+    border-radius:6px;
+    background:white;
+    color:black;
+    font-weight:bold;
 }
 
+/* TOTAL */
 .total-box{
     margin-top:20px;
     padding:15px;
