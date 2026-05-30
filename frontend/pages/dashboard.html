@@ -1,60 +1,122 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard - Galaxy Cafeshop</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Galaxy Cafe</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<aside class="sidebar">
-  <div class="brand"><span></span>Galaxy Cafe<div class="brand-sub">Member Dashboard</div></div>
-  <a href="dashboard.html" class="nav-item active">⊞ Ringkasan</a>
-  <a href="menu.html" class="nav-item">☰ Katalog Menu</a>
-  <a href="reservasi.html" class="nav-item">▦ Reservasi Saya</a>
-  <a href="#" class="nav-item">★ Poin & Rewards</a>
-  <div class="logout"><a href="login.html">⇥ Keluar Akun</a></div>
-</aside>
-<div class="main">
-  <header class="topbar">
-    <div><h1>Selamat Datang Kembali, Budi! 👋</h1><p>Sabtu, 30 Mei 2026 · Galaxy Cafeshop</p></div>
-    <div class="profile"><div class="profile-info"><div class="profile-name">Udin Selepet</div><div class="profile-role">Member Aktif</div></div><div class="avatar">BS</div></div>
-  </header>
-  <div class="content">
-    <div class="stats">
-      <div class="stat"><label>Pesanan Bulan Ini</label><div class="val">12</div><div class="sub green">↑ +3 dari bulan lalu</div></div>
-      <div class="stat"><label>Poin Rewards</label><div class="val">450 Pts</div><div class="sub">Setara Rp 45.000</div></div>
-      <div class="stat"><label>Voucher Aktif</label><div class="val">2</div><div class="sub">Berlaku s/d Jun 2026</div></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span></span>Galaxy Cafe
+            <div class="brand-sub">Member Dashboard</div>
+        </div>
+
+        <a href="dashboard.html" class="nav-item active">⊞ Ringkasan</a>
+        <a href="menu.html" class="nav-item">☰ Katalog Menu</a>
+        <a href="reservasi.html" class="nav-item">▦ Reservasi Saya</a>
+
+        <div class="logout">
+            <a href="login.html">⇥ Keluar Akun</a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div>
+                <h1>Selamat Datang Kembali, Budi! 👋</h1>
+                <p>Sabtu, 30 Mei 2026 · Galaxy Cafeshop</p>
+            </div>
+
+            <div class="profile">
+                <div class="profile-info">
+                    <div class="profile-name">Udin Selepet</div>
+                    <div class="profile-role">Member Aktif</div>
+                </div>
+
+                <div class="avatar">BS</div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- STATISTIK -->
+            <div class="stats">
+                <div class="stat">
+                    <label>Pesanan Bulan Ini</label>
+                    <div class="val">12</div>
+                    <div class="sub green">↑ +3 dari bulan lalu</div>
+                </div>
+            </div>
+
+            <!-- RIWAYAT PESANAN -->
+            <div class="card">
+                <div class="card-head">
+                    Riwayat Pesanan Terbaru
+                    <a href="reservasi.html">Lihat Semua →</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Pesanan</th>
+                            <th>Nama Pemesan</th>
+                            <th>Tanggal</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- MENU POPULER -->
+            <div class="two">
+                <div class="card">
+
+                    <div class="card-head">
+                        Menu Populer
+                        <a href="menu.html">Katalog →</a>
+                    </div>
+
+                    <div class="menu-row">
+                        <span>Kopi Susu Gula Aren</span>
+                        <span class="price">Rp 20.000</span>
+                    </div>
+
+                    <div class="menu-row">
+                        <span>Matcha Latte Creamy</span>
+                        <span class="price">Rp 25.000</span>
+                    </div>
+
+                    <div class="menu-row">
+                        <span>Nasi Goreng Bimasakti</span>
+                        <span class="price">Rp 30.000</span>
+                    </div>
+
+                    <div class="menu-row">
+                        <span>Nebula Lychee Tea</span>
+                        <span class="price">Rp 15.000</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="card">
-      <div class="card-head">Riwayat Pesanan Terbaru <a href="reservasi.html">Lihat Semua →</a></div>
-      <table>
-        <thead><tr><th>ID Pesanan</th><th>Nama Pemesan</th><th>Tanggal</th><th>Total</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">#ORD-8821</td><td class="bold">Ajaraaa Aja</td><td>25 Mei 2026</td><td class="bold">Rp 35.000</td><td><span class="badge process">Diproses</span></td></tr>
-          <tr><td class="mono">#ORD-8790</td><td class="bold">Mba Nai Nai</td><td>22 Mei 2026</td><td class="bold">Rp 25.000</td><td><span class="badge success">Selesai</span></td></tr>
-          <tr><td class="mono">#ORD-8755</td><td class="bold">Aalfiraner</td><td>20 Mei 2026</td><td class="bold">Rp 18.000</td><td><span class="badge success">Selesai</span></td></tr>
-          <tr><td class="mono">#ORD-8740</td><td class="bold">Siq Irwaner</td><td>18 Mei 2026</td><td class="bold">Rp 30.000</td><td><span class="badge success">Selesai</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="two">
-      <div class="card">
-        <div class="card-head">Menu Populer <a href="menu.html">Katalog →</a></div>
-        <div class="menu-row"><span>Kopi Susu Gula Aren</span><span class="price">Rp 20.000</span></div>
-        <div class="menu-row"><span>Matcha Latte Creamy</span><span class="price">Rp 25.000</span></div>
-        <div class="menu-row"><span>Nasi Goreng Bimasakti</span><span class="price">Rp 30.000</span></div>
-        <div class="menu-row"><span>Nebula Lychee Tea</span><span class="price">Rp 15.000</span></div>
-      </div>
-      <div class="card">
-        <div class="card-head">Voucher Aktif</div>
-        <div class="voucher"><div class="v-ic">★</div><div><div class="v-t">Diskon 15% Minuman</div><div class="v-s">Berlaku s/d 15 Jun 2026</div></div></div>
-        <div class="voucher"><div class="v-ic">🎁</div><div><div class="v-t">Buy 1 Get 1 Nebula Tea</div><div class="v-s">Berlaku s/d 30 Jun 2026</div></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="../js/dashboard.js"></script>
+
+    <script src="../js/dashboard.js"></script>
+
 </body>
 </html>
