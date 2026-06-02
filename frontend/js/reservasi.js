@@ -1,65 +1,50 @@
-function ubahQty(id, perubahan) {
-    let input = document.getElementById(id);
-    let nilai = parseInt(input.value) + perubahan;
+<<<<<<< HEAD
+/**
+ * reservasi.js - Skrip Halaman Reservasi
+ * Menangani validasi formulir pemesanan tempat duduk/meja.
+ */
 
-    if (nilai < 0) nilai = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    // Mengambil elemen form reservasi (Anggap id-nya adalah 'form-reservasi')
+    const formReservasi = document.getElementById('form-reservasi');
 
-    input.value = nilai;
-    hitungTotal();
-}
+    if (formReservasi) {
+        formReservasi.addEventListener('submit', (event) => {
+            // Mencegah halaman reload (refresh) secara otomatis saat submit
+            event.preventDefault();
 
-function hitungTotal() {
+            // Mengambil nilai dari inputan form
+            const nama = document.getElementById('nama-pelanggan').value.trim();
+            const tanggal = document.getElementById('tanggal-reservasi').value;
+            const jumlahOrang = document.getElementById('jumlah-orang').value;
 
-    const harga = {
-        roti: 15000,
-        fries: 20000,
-        nasgor: 30000,
-        spaghetti: 35000,
+            // Validasi Sederhana
+            // Penjelasan: Memastikan pengguna mengisi data dengan benar sebelum diproses.
+            if (nama === "" || tanggal === "" || jumlahOrang === "") {
+                alert("Gagal: Mohon lengkapi semua kolom reservasi!");
+                return; // Hentikan proses jika ada yang kosong
+            }
 
-        kopi: 20000,
-        americano: 18000,
-        matcha: 25000,
-        lychee: 15000
-    };
+            if (jumlahOrang < 1) {
+                alert("Gagal: Jumlah orang minimal adalah 1.");
+                return;
+            }
 
-    let total =
-        (document.getElementById('roti').value * harga.roti) +
-        (document.getElementById('fries').value * harga.fries) +
-        (document.getElementById('nasgor').value * harga.nasgor) +
-        (document.getElementById('spaghetti').value * harga.spaghetti) +
-        (document.getElementById('kopi').value * harga.kopi) +
-        (document.getElementById('americano').value * harga.americano) +
-        (document.getElementById('matcha').value * harga.matcha) +
-        (document.getElementById('lychee').value * harga.lychee);
-
-    document.getElementById('totalHarga').innerText =
-        "Rp " + total.toLocaleString('id-ID');
-}
-
-document.getElementById("formReservasi").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    alert("Reservasi berhasil dibuat!");
-
-    setTimeout(() => {
-        window.location.href = "dashboard.html";
-    }, 1000);
+            // Jika semua validasi lolos, simulasikan sukses
+            alert(`Berhasil! Meja atas nama ${nama} untuk ${jumlahOrang} orang pada tanggal ${tanggal} telah dikonfirmasi.`);
+            
+            // Kosongkan form kembali setelah sukses
+            formReservasi.reset();
+        });
+    }
 });
-
-function validasiInputPelanggan() {
-  const nama = document.getElementById('nama').value.trim();
-  const menu = document.querySelector('[name="pilihan_menu"]').value;
-  const jumlah = parseInt(document.querySelector('[name="jumlah"]').value);
-
-  if (!nama || !jumlah) return false;
-
-  const PRICES = { 'Kopi Susu Gula Aren': 20000, 'Americano Iced': 18000, ... };
-  const id = '#ORD-' + (Date.now() % 100000);
-  const total = (PRICES[menu] || 0) * jumlah;
-
-  const orders = JSON.parse(localStorage.getItem('galaxy_orders') || '[]');
-  orders.unshift({ id, nama, menu, jumlah, total,
-    tanggal: new Date().toLocaleDateString('id-ID'), status: 'new', label: 'Baru' });
-  localStorage.setItem('galaxy_orders', JSON.stringify(orders));
-  return true; // lanjut submit
+=======
+function cekForm() {
+    let nama = document.getElementById("nama").value;
+    if (nama.length < 3) {
+        alert("Nama tidak boleh terlalu pendek!");
+        return false;
+    }
+    return true;
 }
+>>>>>>> 8e94ddb0ce3c628afa2a88a61e52e7d40b901b53
