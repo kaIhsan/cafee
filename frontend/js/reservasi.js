@@ -76,7 +76,7 @@ document.getElementById("formReservasi").addEventListener("submit", function (e)
         }
     });
 
-    const id = Math.floor(1000 + Math.random() * 9000);
+    const id = 'ID-' + Math.floor(1000 + Math.random() * 9000);
 
     const order = {
         id: id,

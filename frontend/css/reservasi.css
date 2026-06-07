@@ -98,14 +98,14 @@ button:not(.qty-box button){
     padding:12px;
     border:none;
     border-radius:8px;
-    background:linear-gradient(135deg, #8B5CF6, #EC4899);
+    background:linear-gradient(135deg, #520cf4, rgb(200, 145, 103));
     color:black;
     font-weight:bold;
     cursor:pointer;
 }
 
 button:not(.qty-box button):hover{
-    background:#e028a3;
+    background:rgb(200, 145, 103);;
 }
 
 .back-button{
@@ -124,7 +124,7 @@ button:not(.qty-box button):hover{
 }
 
 .back-button:hover{
-    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    background: linear-gradient(135deg, #4e09ee, rgb(200, 145, 103));
     color: black;
     border-color: rgb(0, 42, 255);
 }
@@ -181,7 +181,7 @@ button:not(.qty-box button):hover{
     border:none;
     border-radius:50%;
 
-    background:#EC4899;
+    background:rgb(200, 145, 103);
     color:black;
 
     font-size:14px;
@@ -208,12 +208,12 @@ button:not(.qty-box button):hover{
     font-weight:bold;
 }
 
-/* TOTAL */
+
 .total-box{
     margin-top:20px;
     padding:15px;
     background:rgba(255,215,0,0.15);
-    border:1px solid rgb(139, 30, 75);
+    border:1px solid rgb(200, 145, 103);
     border-radius:10px;
     color:white;
     font-size:20px;
@@ -222,5 +222,5 @@ button:not(.qty-box button):hover{
 }
 
 #totalHarga{
-    color:rgb(184, 34, 124);
+    color:rgb(200, 145, 103);
 }

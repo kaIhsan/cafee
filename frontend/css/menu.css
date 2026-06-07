@@ -2,7 +2,7 @@
     --space-black: #0b0c10;
     --deep-blue: #1b2735;
     --nebula-purple: #4a00e0;
-    --cosmic-pink: #ff007f;
+    --cosmic-pink: rgb(226, 125, 48);
     --starlight-white: #e0e0e0;
     --gold-accent: #ffd700;
 
@@ -24,6 +24,49 @@
     background: linear-gradient(135deg, var(--space-black), var(--deep-blue), var(--nebula-purple));
     min-height: 100vh;
     padding: 40px 20px;
+}
+
+.sidebar{
+    border-right:3px solid #ffd700;
+    width:200px;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    background:black;
+}
+
+.sidebar a{
+    color:#D19A5D;
+    text-decoration:none;
+    padding:12px 20px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:rgba(209,154,93,.15);
+    color:#FFD700;
+    transform:translateX(5px);
+}
+
+.nav-item.active{
+    background:rgba(209,154,93,.2);
+    border-left:4px solid #D19A5D;
+}
+
+.main{
+    margin-left:200px;
+    padding:20px;
+}
+
+.menu-header,
+.menu-grid,
+.menu-action{
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /* CONTAINER */
@@ -75,9 +118,6 @@
     border-color: var(--gold-accent);
 }
 
-/* =========================
-   FIX GAMBAR (INI PENTING)
-   ========================= */
 .menu-card img {
     width: 100%;
     height: 160px;          /* KUNCI UKURAN */
@@ -85,7 +125,6 @@
     display: block;
 }
 
-/* TEXT */
 .menu-card h3 {
     font-family: var(--font-heading);
     font-size: 1.1rem;
@@ -100,6 +139,7 @@
 
 /* BUTTON */
 .menu-action {
+    
     text-align: center;
     margin-top: 50px;
 }
