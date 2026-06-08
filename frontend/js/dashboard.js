@@ -1,15 +1,42 @@
-function renderOrders() {
-  const dynamic = JSON.parse(localStorage.getItem('galaxy_orders') || '[]');
-  const staticRows = [ /* data #ORD-8821 dst. */ ];
-  const all = [...dynamic, ...staticRows];
-  const tbody = document.querySelector('table tbody');
-  tbody.innerHTML = all.map(o => `
-    <tr>
-      <td class="mono">${o.id}</td>
-      <td class="bold">${o.nama}</td>
-      <td>${o.tanggal}</td>
-      <td class="bold">Rp ${o.total.toLocaleString('id-ID')}</td>
-      <td><span class="badge ${o.status}">${o.label}</span></td>
-    </tr>`).join('');
-}
-document.addEventListener('DOMContentLoaded', renderOrders);
+document.addEventListener('DOMContentLoaded', () => {
+
+    const slider = document.querySelector('.slider');
+
+    if (!slider) return;
+
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    nextBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        });
+    });
+
+    setInterval(() => {
+        slider.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+
+        if (
+            slider.scrollLeft + slider.clientWidth >=
+            slider.scrollWidth - 10
+        ) {
+            slider.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+    }, 4000);
+
+});

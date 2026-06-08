@@ -1,49 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Reservasi Meja</title>
-    <link rel="stylesheet" href="../css/reservasi.css">
+<meta charset="UTF-8">
+<title>Galaxy Cafe - Reservasi</title>
+<link rel="stylesheet" href="../css/reservasi.css">
 </head>
+
 <body>
+<div class="back-btn">
+    <a href="../pages/dashboard.html" class="back">← Kembali</a>
+</div>
+<div class="container">
+<div class="box">
+<CENTER>
+<h1>Reservasi Galaxy Cafe</h1>
+</CENTER>
+<form id="formReservasi">
 
+<!-- DATA -->
+<h3>👤 Data Pelanggan</h3>
 
-    <div class="form-box" style="max-width: 500px; margin: 30px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <h2 style="margin-top: 0; color: #1e293b;">Formulir Pemesanan</h2>
-        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Silakan isi detail pemesanan Anda di bawah ini.</p>
-        
-        <form action="/proses_pesan" method="POST" onsubmit="return validasiInputPelanggan()">
-            
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Nama Lengkap Pelanggan:</label>
-                <input type="text" id="nama" name="nama_pelanggan" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;" required>
-            </div>
+<input type="text" id="nama" placeholder="Nama" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="tel" id="telp" placeholder="No HP" required>
 
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Pilihan Menu Utama:</label>
-                <select name="pilihan_menu" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; background: white;">
-                    <option value="Kopi Susu Gula Aren">Kopi Susu Gula Aren</option>
-                    <option value="Americano Iced">Americano Iced</option>
-                    <option value="Matcha Latte Creamy">Matcha Latte Creamy</option>
-                    <option value="Roti Bakar Cokelat Keju">Roti Bakar Cokelat Keju</option>
-                    <option value="Kentang Goreng Garing">Kentang Goreng Garing</option>
-                    <option value="Nasi Goreng Khas Kafe">Nasi Goreng Khas Kafe</option>
-                </select>
-            </div>
+<input type="date" id="tanggal" required>
+<input type="time" id="jam" required>
+<input type="number" id="jumlah" placeholder="Jumlah Orang" min="1" required>
 
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Jumlah Porsi / Pesanan:</label>
-                <input type="number" name="jumlah" min="1" max="20" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;" required>
-            </div>
+<textarea id="catatan" placeholder="Catatan"></textarea>
+<br><br>
+<h3> Pre-Order Menu</h3>
+<div class="tab-menu">
+    <button type="button" class="tab active" onclick="showTab('makanan')">🍽️ Makanan</button>
+    <button type="button" class="tab" onclick="showTab('minuman')">☕ Minuman</button>
+</div>
 
-            <button type="submit" style="width: 100%; background-color: #0ea5e9; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
-                Kirim Data Reservasi
-            </button>
-        </form>
-    </div>
+<!-- hanya 1 tampil -->
+<div id="makanan" class="tab-content active"></div>
+<div id="minuman" class="tab-content"></div>
+<!-- CART -->
+<h3>🛒 Keranjang</h3>
+<div id="cart"></div>
 
+<div class="total">
+Total: <span id="total">Rp 0</span>
+</div>
 
-    <script src="/js/reservasi.js"></script>
+<button type="submit">Checkout & Reservasi</button>
+
+</form>
+<br>
+<div class="info">Info: Untuk Meja Nanti Kami Siapkan Sesuai Ketentuan Jumlah Orang</div>
+</div>
+</div>
+
+<script src="../js/reservasi.js"></script>
+
 </body>
 </html>

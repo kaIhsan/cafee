@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Galaxy Cafe</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body class="login-body">
     <main class="login-card">
@@ -13,8 +13,12 @@
             <h2>Galaxy Cafe</h2>
             <p>Welcome to Galaxy Cafe Website</p>
         </div>
-<script src="../js/login.js"></script>
-        <form action="/login" method="POST">
+<script src="../js/register.js"></script>
+        <form action="/register" method="POST">
+            <div class="input-group">
+                <label for="name">Nama Anda</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Anda" required>
+            </div>
             <div class="input-group">
                 <label for="username">Email atau Username</label>
                 <input type="text" id="username" name="username" placeholder="Masukkan email atau username" required>
@@ -25,14 +29,8 @@
                 <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
             </div>
 
-            <div class="form-options">
-                <label class="remember-me">
-                    <input type="checkbox" name="remember"> Ingat Saya
-                </label>
-                <a href="register.html" class="forgot-link">Belum Punya Akun?</a>
-            </div>
-
-            <button type="submit" class="btn-primary">Masuk Sekarang</button>
+            <button type="button" class="btn-primary"
+        onclick="window.location.href='login.html'">Daftar Akun</button>
         </form>
 
     </main>
