@@ -1,166 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Reservasi</title>
-    <link rel="stylesheet" href="../css/reservasi.css">
+<meta charset="UTF-8">
+<title>Galaxy Cafe - Reservasi</title>
+<link rel="stylesheet" href="../css/reservasi.css">
 </head>
+
 <body>
-
-<a href="dashboard.html" class="back-button">← Kembali</a>
-
+<div class="back-btn">
+    <a href="../pages/dashboard.html" class="back">← Kembali</a>
+</div>
 <div class="container">
-    <div class="reservasi-box">
-        <h2>Form Reservasi</h2>
+<div class="box">
+<CENTER>
+<h1>Reservasi Galaxy Cafe</h1>
+</CENTER>
+<form id="formReservasi">
 
-        <form id="formReservasi">
+<!-- DATA -->
+<h3>👤 Data Pelanggan</h3>
 
-            <div class="input-group">
-                <label>Nama Lengkap</label>
-                <input type="text" id="nama" required>
-            </div>
+<input type="text" id="nama" placeholder="Nama" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="tel" id="telp" placeholder="No HP" required>
 
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" required>
-            </div>
+<input type="date" id="tanggal" required>
+<input type="time" id="jam" required>
+<input type="number" id="jumlah" placeholder="Jumlah Orang" min="1" required>
 
-            <div class="input-group">
-                <label>No. Telp</label>
-                <input type="tel" required>
-            </div>
-
-            <div class="input-group">
-                <label>Tanggal Reservasi</label>
-                <input type="date" required>
-            </div>
-
-            <div class="input-group">
-                <label>Jam Reservasi</label>
-                <input type="time" required>
-            </div>
-
-            <div class="input-group">
-                <label>Jumlah Orang</label>
-                <input type="number" min="1" required>
-            </div>
-
-            <div class="input-group">
-                <label>Catatan</label>
-                <textarea rows="4"></textarea>
-            </div>
-
-            <h3>🥐 Makanan</h3>
-
-            <div class="menu-item">
-    <div>
-        <p>Roti (15.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('roti',-1)">−</button>
-        <input id="roti" value="0" readonly>
-        <button type="button" onclick="ubahQty('roti',1)">+</button>
-    </div>
+<textarea id="catatan" placeholder="Catatan"></textarea>
+<br><br>
+<h3> Pre-Order Menu</h3>
+<div class="tab-menu">
+    <button type="button" class="tab active" onclick="showTab('makanan')">🍽️ Makanan</button>
+    <button type="button" class="tab" onclick="showTab('minuman')">☕ Minuman</button>
 </div>
 
-            <div class="menu-item">
-    <div>
-        <p>Fries (20.000)</p>
-    </div>
+<!-- hanya 1 tampil -->
+<div id="makanan" class="tab-content active"></div>
+<div id="minuman" class="tab-content"></div>
+<!-- CART -->
+<h3>🛒 Keranjang</h3>
+<div id="cart"></div>
 
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('fries',-1)">−</button>
-        <input id="fries" value="0" readonly>
-        <button type="button" onclick="ubahQty('fries',1)">+</button>
-    </div>
+<div class="total">
+Total: <span id="total">Rp 0</span>
 </div>
 
-           <div class="menu-item">
-    <div>
-        <p>Nasi Goreng (30.000)</p>
-    </div>
+<button type="submit">Checkout & Reservasi</button>
 
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('nasgor',-1)">−</button>
-        <input id="nasgor" value="0" readonly>
-        <button type="button" onclick="ubahQty('nasgor',1)">+</button>
-    </div>
+</form>
+<br>
+<div class="info">Info: Untuk Meja Nanti Kami Siapkan Sesuai Ketentuan Jumlah Orang</div>
 </div>
-
-            <div class="menu-item">
-    <div>
-        <p>Spaghetti (35.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('spaghetti',-1)">−</button>
-        <input id="spaghetti" value="0" readonly>
-        <button type="button" onclick="ubahQty('spaghetti',1)">+</button>
-    </div>
-</div>
-
-            <h3>☕ Minuman</h3>
-
-            <div class="menu-item">
-    <div>
-        <p>Kopi (20.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('kopi',-1)">−</button>
-        <input id="kopi" value="0" readonly>
-        <button type="button" onclick="ubahQty('kopi',1)">+</button>
-    </div>
-</div>
-
-    <div class="menu-item">
-    <div>
-        <p>Americano (18.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('americano',-1)">−</button>
-        <input id="americano" value="0" readonly>
-        <button type="button" onclick="ubahQty('americano',1)">+</button>
-    </div>
-</div>
-
-        <div class="menu-item">
-    <div>
-        <p>Matcha (25.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('matcha',-1)">−</button>
-        <input id="matcha" value="0" readonly>
-        <button type="button" onclick="ubahQty('matcha',1)">+</button>
-    </div>
-</div>
-
-           <div class="menu-item">
-    <div>
-        <p>Lychee (15.000)</p>
-    </div>
-
-    <div class="qty-box">
-        <button type="button" onclick="ubahQty('lychee',-1)">−</button>
-        <input id="lychee" value="0" readonly>
-        <button type="button" onclick="ubahQty('lychee',1)">+</button>
-    </div>
-</div>
-
-            <div class="total-box">
-                Total: <span id="totalHarga">Rp 0</span>
-            </div>
-
-            <button type="submit">Kirim Reservasi</button>
-
-        </form>
-    </div>
 </div>
 
 <script src="../js/reservasi.js"></script>
+
 </body>
 </html>
