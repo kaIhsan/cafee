@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --color-primary: #0911ab;
-    --color-primary-hover: rgb(200, 145, 103);
-    --color-dark: rgb(200, 145, 103);
+    --color-primary: #FFD700;
+    --color-primary-hover: rgb(17, 69, 201);
+    --color-dark: #0911ab;
     --color-dark-hover: #ffffff;
     --color-slate-600: #6300ae98;
     --color-slate-400: #79797998;
@@ -34,6 +34,7 @@
 }
 
 body {
+    cursor:default;
     font-family: var(--font-main);
     background-color: var(--color-bg-main);
     color: var(--color-dark);
@@ -130,9 +131,6 @@ body {
     box-shadow: none;
 }
 
-/* ==========================================================================
-   Halaman Login (Login Page)
-   ========================================================================== */
 .login-body {
     display: flex;
     justify-content: center;
@@ -170,7 +168,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* Form & Input Fields */
 .input-group {
     margin-bottom: 24px;
 }
@@ -233,6 +230,7 @@ body {
 
 .forgot-link, 
 .login-footer a {
+    cursor:grab;
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
@@ -254,9 +252,7 @@ body {
     padding-top: 24px;
 }
 
-/* ==========================================================================
-   Animasi CSS (Keyframes)
-   ========================================================================== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -273,9 +269,6 @@ body {
     to { opacity: 1; }
 }
 
-/* ==========================================================================
-   Responsive Breakpoints (Mobile Friendly)
-   ========================================================================== */
 @media (max-width: 640px) {
     .hero-section {
         margin: 40px 16px;
@@ -296,9 +289,8 @@ body {
     }
 
     .btn {
-        width: 100%; /* Tombol memenuhi lebar layar gadget */
+        width: 100%;
     }
-
     .login-card {
         padding: 36px 24px;
     }

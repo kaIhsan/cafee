@@ -1,101 +1,136 @@
-function ubahQty(id, perubahan) {
-    let input = document.getElementById(id);
-    if (!input) return;
+/* ================= DATA MENU ================= */
+const makanan = [
+    {id:1, nama:"Nasi Ayam Teriyaki", harga:16000},
+    {id:2, nama:"Nasi Cumi Cabe Ijo", harga:16000},
+    {id:3, nama:"Nasi Nasi Tahu Balado", harga:16000},
+    {id:4, nama:"Nasi Ayam Crispy Sambal Balado", harga:16000}
+];
 
-    let nilai = (parseInt(input.value) || 0) + perubahan;
+const minuman = [
+    {id:5, nama:"Kopi", harga:12000},
+    {id:6, nama:"Matcha", harga:25000},
+    {id:7, nama:"Americano", harga:18000},
+    {id:8, nama:"Lychee Tea", harga:15000}
+];
 
-    if (nilai < 0) nilai = 0;
+/* ================= CART ================= */
+let cart = [];
 
-    input.value = nilai;
+/* ================= RENDER MENU ================= */
+function renderMenu(){
+    document.getElementById("makanan").innerHTML =
+    makanan.map(m => `
+        <div class="card">
+            <h4>${m.nama}</h4>
+            <p>Rp ${m.harga.toLocaleString("id-ID")}</p>
+            <button type="button" onclick="add(${m.id},'makanan')">+ Tambah</button>
+        </div>
+    `).join("");
 
-    hitungTotal();
+    document.getElementById("minuman").innerHTML =
+    minuman.map(m => `
+        <div class="card">
+            <h4>${m.nama}</h4>
+            <p>Rp ${m.harga.toLocaleString("id-ID")}</p>
+            <button type="button" onclick="add(${m.id},'minuman')">+ Tambah</button>
+        </div>
+    `).join("");
 }
 
-function hitungTotal() {
-    const harga = {
-        roti: 15000,
-        fries: 20000,
-        nasgor: 30000,
-        spaghetti: 35000,
-        kopi: 20000,
-        americano: 18000,
-        matcha: 25000,
-        lychee: 15000
-    };
 
-    let total =
-        (parseInt(document.getElementById('roti').value) || 0) * harga.roti +
-        (parseInt(document.getElementById('fries').value) || 0) * harga.fries +
-        (parseInt(document.getElementById('nasgor').value) || 0) * harga.nasgor +
-        (parseInt(document.getElementById('spaghetti').value) || 0) * harga.spaghetti +
-        (parseInt(document.getElementById('kopi').value) || 0) * harga.kopi +
-        (parseInt(document.getElementById('americano').value) || 0) * harga.americano +
-        (parseInt(document.getElementById('matcha').value) || 0) * harga.matcha +
-        (parseInt(document.getElementById('lychee').value) || 0) * harga.lychee;
+function add(id,type){
 
-    document.getElementById('totalHarga').innerText =
-        "Rp " + total.toLocaleString('id-ID');
+    let item =
+        type === "makanan"
+        ? makanan.find(m => m.id === id)
+        : minuman.find(m => m.id === id);
+
+    let exist = cart.find(c => c.id === id);
+
+    if(exist){
+        exist.qty++;
+    }else{
+        cart.push({...item, qty:1});
+    }
+
+    renderCart();
 }
 
-
-document.getElementById("formReservasi").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const nama = document.getElementById('nama').value;
-
-    const harga = {
-        roti: 15000,
-        fries: 20000,
-        nasgor: 30000,
-        spaghetti: 35000,
-        kopi: 20000,
-        americano: 18000,
-        matcha: 25000,
-        lychee: 15000
-    };
-
-    const items = [
-        { id: 'roti', name: 'Roti' },
-        { id: 'fries', name: 'Fries' },
-        { id: 'nasgor', name: 'Nasi Goreng' },
-        { id: 'spaghetti', name: 'Spaghetti' },
-        { id: 'kopi', name: 'Kopi' },
-        { id: 'americano', name: 'Americano' },
-        { id: 'matcha', name: 'Matcha' },
-        { id: 'lychee', name: 'Lychee' }
-    ];
+/* ================= CART ================= */
+function renderCart(){
 
     let total = 0;
-    let detail = [];
 
-    items.forEach(item => {
-        const qty = parseInt(document.getElementById(item.id).value) || 0;
-        if (qty > 0) {
-            total += qty * harga[item.id];
-            detail.push(`${item.name} x${qty}`);
-        }
-    });
+    document.getElementById("cart").innerHTML =
+    cart.map(c => {
+        total += c.harga * c.qty;
 
-    const id = 'ID-' + Math.floor(1000 + Math.random() * 9000);
+        return `
+        <div>
+            ${c.nama} x${c.qty}
+            <button onclick="removeItem(${c.id})">  X   </button>
+        </div>
+        `;
+    }).join("");
 
-    const order = {
-        id: id,
-        nama: nama,
-        tanggal: new Date().toLocaleDateString('id-ID'),
-        total: total,
-        status: 'process',
-        label: 'Diproses',
-        menu: detail.join(', ')
+    document.getElementById("total").innerText =
+    "Rp " + total.toLocaleString("id-ID");
+}
+
+/* ================= REMOVE ================= */
+function removeItem(id){
+    cart = cart.filter(c => c.id !== id);
+    renderCart();
+}
+
+
+document.getElementById("formReservasi").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const data = {
+        id:"RES-"+Date.now(),
+
+        nama:document.getElementById("nama").value,
+        email:document.getElementById("email").value,
+        telp:document.getElementById("telp").value,
+        tanggal:document.getElementById("tanggal").value,
+        jam:document.getElementById("jam").value,
+        jumlah:document.getElementById("jumlah").value,
+        catatan:document.getElementById("catatan").value,
+
+        items:cart
     };
 
-    const old = JSON.parse(localStorage.getItem('galaxy_orders') || '[]');
-    old.unshift(order);
-    localStorage.setItem('galaxy_orders', JSON.stringify(old));
+    let old = JSON.parse(localStorage.getItem("galaxy_reservasi") || "[]");
+    old.push(data);
 
-    alert("Reservasi berhasil dibuat!");
+    localStorage.setItem("galaxy_reservasi", JSON.stringify(old));
 
-    // Redirect ke dashboard HANYA di sini
-    setTimeout(() => {
-        window.location.href = "dashboard.html";
-    }, 1000);
+    alert("Reservasi berhasil!");
+
+    cart = [];
+    renderCart();
+
+    window.location.href = "../pages/dashboard.html";
 });
+
+/* ================= TAB FUNCTION ================= */
+function showTab(tab){
+
+    // sembunyikan semua
+    document.querySelectorAll(".tab-content")
+    .forEach(el => el.classList.remove("active"));
+
+    // reset button
+    document.querySelectorAll(".tab")
+    .forEach(el => el.classList.remove("active"));
+
+    // tampilkan yang dipilih
+    document.getElementById(tab).classList.add("active");
+
+    // active button
+    event.target.classList.add("active");
+}
+
+/* INIT */
+renderMenu();

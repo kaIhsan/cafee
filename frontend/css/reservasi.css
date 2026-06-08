@@ -1,226 +1,131 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
 }
 
 body{
-    background:#000;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    overflow-x:hidden;
+background: radial-gradient(circle at top,#1a1a40,#000);
+color:white;
+min-height:100vh;
 }
 
-/* Gambar Atas */
-.top-image{
-    position:fixed;
-    top:0;
-    left:50%;
-    transform:translateX(-50%);
-    width:100%;
-    max-height:250px;
-    object-fit:cover;
-    opacity:0.4;
-    z-index:1;
+.back-btn a{
+    color:rgb(200, 145, 103);
 }
-
-/* Gambar Kiri */
-.left-image{
+.back{
     position:fixed;
-    left:0;
-    top:50%;
-    transform:translateY(-50%);
-    width:250px;
-    opacity:0.5;
-    z-index:1;
-}
+    top:15px;
+    left:15px;
+    padding:10px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
 
-/* Gambar Kanan */
-.right-image{
-    position:fixed;
-    right:0;
-    top:50%;
-    transform:translateY(-50%);
-    width:250px;
-    opacity:0.5;
-    z-index:1;
+    z-index:9999; /* 🔥 INI PENTING */
 }
 
 .container{
-    position:relative;
-    z-index:2;
-    width:100%;
-    max-width:500px;
-    padding:20px;
+display:flex;
+justify-content:center;
+padding:30px;
 }
-form{
+
+.box{
+width:520px;
+background:rgba(255,255,255,0.06);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+border:none;
+border-radius:8px;
+}
+
+.tab-menu{
     display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.reservasi-box{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.2);
-    padding:30px;
-    border-radius:15px;
-    color:white;
-}
-
-.reservasi-box h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.input-group{
-    margin-bottom:15px;
-}
-
-.input-group label{
-    display:block;
-    margin-bottom:5px;
-}
-
-.input-group input{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-}
-
-button:not(.qty-box button){
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:linear-gradient(135deg, #520cf4, rgb(200, 145, 103));
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:not(.qty-box button):hover{
-    background:rgb(200, 145, 103);;
-}
-
-.back-button{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 18px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
-}
-
-.back-button:hover{
-    background: linear-gradient(135deg, #4e09ee, rgb(200, 145, 103));
-    color: black;
-    border-color: rgb(0, 42, 255);
-}
-
-.kategori-title{
-    margin-top:25px;
-    margin-bottom:12px;
-    color:gold;
-    font-size:22px;
-    border-left:4px solid gold;
-    padding-left:12px;
-}
-
-.menu-list{
-    margin-bottom:20px;
-}
-
-.menu-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     gap:10px;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;
-    padding:15px;
-    margin-bottom:10px;
+    margin:15px 0;
 }
 
-.menu-item h4{
-    color:white;
-    margin-bottom:5px;
-}
-
-.menu-item span{
-    color:gold;
-}
-
-.qty-box{
-    display:flex;
-    align-items:center;
-    gap:6px;
-}
-
-.qty-box button{
-    width:24px;
-    height:24px;
-    min-width:24px;
-    min-height:24px;
-
-    padding:0;
-    margin:0;
-
+.tab{
+    flex:1;
+    padding:10px;
     border:none;
-    border-radius:50%;
-
-    background:rgb(200, 145, 103);
-    color:black;
-
-    font-size:14px;
-    font-weight:bold;
-
+    border-radius:8px;
     cursor:pointer;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    flex-shrink:0;
-}
-
-/* INPUT QTY */
-.qty-box input{
-    width:40px;
-    height:26px;
-    text-align:center;
-    border:none;
-    border-radius:6px;
-    background:white;
-    color:black;
-    font-weight:bold;
-}
-
-
-.total-box{
-    margin-top:20px;
-    padding:15px;
-    background:rgba(255,215,0,0.15);
-    border:1px solid rgb(200, 145, 103);
-    border-radius:10px;
+    background:rgba(255,255,255,0.1);
     color:white;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
+    transition:0.3s;
 }
 
-#totalHarga{
-    color:rgb(200, 145, 103);
+.tab.active{
+    background:#0e72e4;
+    color:black;
+}
+
+/* CONTENT */
+.tab-content{
+    display:none;
+}
+
+.tab-content.active{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:10px;
+}
+
+.card{
+background:#111;
+padding:10px;
+border-radius:10px;
+}
+
+.card button{
+width:100%;
+margin-top:5px;
+padding:6px;
+background:#0e72e4;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+#cart div{
+display:flex;
+justify-content:space-between;
+margin:5px 0;
+}
+
+.total{
+margin:10px 0;
+font-size:18px;
+font-weight:bold;
+}
+
+button[type="submit"]{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:linear-gradient(45deg,#51a2dc,#1323dc);
+color:black;
+font-weight:bold;
+cursor:pointer;
 }
