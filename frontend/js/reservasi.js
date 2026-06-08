@@ -39,6 +39,60 @@ function hitungTotal() {
 document.getElementById("formReservasi").addEventListener("submit", function(e){
     e.preventDefault();
 
+<<<<<<< HEAD
+=======
+    const nama = document.getElementById('nama').value;
+
+    const harga = {
+        roti: 15000,
+        fries: 20000,
+        nasgor: 30000,
+        spaghetti: 35000,
+        kopi: 20000,
+        americano: 18000,
+        matcha: 25000,
+        lychee: 15000
+    };
+
+    const items = [
+        { id: 'roti', name: 'Roti' },
+        { id: 'fries', name: 'Fries' },
+        { id: 'nasgor', name: 'Nasi Goreng' },
+        { id: 'spaghetti', name: 'Spaghetti' },
+        { id: 'kopi', name: 'Kopi' },
+        { id: 'americano', name: 'Americano' },
+        { id: 'matcha', name: 'Matcha' },
+        { id: 'lychee', name: 'Lychee' }
+    ];
+
+    let total = 0;
+    let detail = [];
+
+    items.forEach(item => {
+        const qty = parseInt(document.getElementById(item.id).value) || 0;
+        if (qty > 0) {
+            total += qty * harga[item.id];
+            detail.push(`${item.name} x${qty}`);
+        }
+    });
+
+    const id = 'ID-' + Math.floor(1000 + Math.random() * 9000);
+
+    const order = {
+        id: id,
+        nama: nama,
+        tanggal: new Date().toLocaleDateString('id-ID'),
+        total: total,
+        status: 'process',
+        label: 'Diproses',
+        menu: detail.join(', ')
+    };
+
+    const old = JSON.parse(localStorage.getItem('galaxy_orders') || '[]');
+    old.unshift(order);
+    localStorage.setItem('galaxy_orders', JSON.stringify(old));
+
+>>>>>>> c97d53aeb11992cf66757347ded7cfe161287ff3
     alert("Reservasi berhasil dibuat!");
 
     setTimeout(() => {

@@ -2,8 +2,8 @@
 
 :root {
     --color-primary: #0911ab;
-    --color-primary-hover: #0911ab;
-    --color-dark: #0909ab;
+    --color-primary-hover: rgb(200, 145, 103);
+    --color-dark: rgb(200, 145, 103);
     --color-dark-hover: #ffffff;
     --color-slate-600: #6300ae98;
     --color-slate-400: #79797998;
@@ -12,7 +12,6 @@
     
     --font-main: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-    /* Animation & Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Shadows (Efek Kedalaman Elemen) */
@@ -113,6 +112,7 @@ body {
 
 /* Tombol Utama/Biru (Reservasi / Masuk) */
 .btn-primary {
+    cursor:pointer;
     background-color: var(--color-primary);
     color: #ffffff;
     border: none;
